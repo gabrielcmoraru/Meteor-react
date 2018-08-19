@@ -37,21 +37,19 @@ class App extends Component {
     }
 
     return (
-      <div>
+      <main>
         <button onClick={this.showAll.bind(this)}>
           Show {this.props.showAll ? 'One' : 'All'}
         </button>
-        <main>
-          <form className='new-items' onSubmit={this.addItems.bind(this)}>
-            <input type='text' ref='itemOne' />
-            <input type='text' ref='itemTwo'/>
-            <button type='submit'>Add Items</button>
-          </form>
-          {this.props.items.map((item) => {
-            return <Item item={item} key={item._id}/>
-          })}
-        </main>
-      </div>
+        <form className='new-items' onSubmit={this.addItems.bind(this)}>
+          <input type='text' ref='itemOne' />
+          <input type='text' ref='itemTwo'/>
+          <button type='submit'>Add Items</button>
+        </form>
+        {this.props.items.map((item) => {
+          return <Item item={item} key={item._id}/>
+        })}
+      </main>
     );
   }
 }
