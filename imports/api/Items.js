@@ -41,6 +41,7 @@ if (Meteor.isServer) {
           value: 0,
         }
       });
+      Roles.addUsersToRoles(Meteor.userId(), 'submitter');
     },
 
     voteOnItem(item, position) {
@@ -66,6 +67,7 @@ if (Meteor.isServer) {
             }
           })
         }
+        Roles.addUsersToRoles(Meteor.userId(), 'voter');
       }
     }
   });

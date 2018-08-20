@@ -1,5 +1,6 @@
 Accounts.onCreateUser((options, user) => {
-  console.log(options, user);
-  user.car = 'bmw';
+  if(options.email === 'g@g.com') {
+    user.roles = ['admin'];
+  }
   return user;
 })
