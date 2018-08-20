@@ -57,6 +57,7 @@ class App extends Component {
 
 export default createContainer(() => {
   let itemsSub = Meteor.subscribe('allItems');
+  let userSub = Meteor.subscribe('currentUser');
   let showAll = Session.get('showAll');
   return {
     showAll,
